@@ -1,0 +1,35 @@
+public class FactorialAndFibonacci {
+    
+    // Method to calculate factorial recursively
+    public static long factorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+    
+    // Method to calculate Fibonacci recursively
+    public static long fibonacci(int n) {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+    
+    public static void main(String[] args) {
+        int num = 10; // Change this value for different results
+        
+        // Measure factorial runtime
+        long startTime = System.nanoTime();
+        long factResult = factorial(num);
+        long endTime = System.nanoTime();
+        System.out.println("Factorial(" + num + ") = " + factResult);
+        System.out.println("Factorial computation time: " + (endTime - startTime) + " nanoseconds");
+        
+        // Measure Fibonacci runtime
+        startTime = System.nanoTime();
+        long fibResult = fibonacci(num);
+        endTime = System.nanoTime();
+        System.out.println("Fibonacci(" + num + ") = " + fibResult);
+        System.out.println("Fibonacci computation time: " + (endTime - startTime) + " nanoseconds");
+    }
+}
